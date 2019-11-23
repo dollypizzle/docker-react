@@ -6,4 +6,4 @@ before_install:
   - docker build -t dollypizzle/docker-react -f Dockerfile.dev .
 
 script:
-  - docker run dollypizzle/docker-react npm run test -- --coverage
+  - docker run -e CI=true dollypizzle/docker-react yarn run test -- --coverage
